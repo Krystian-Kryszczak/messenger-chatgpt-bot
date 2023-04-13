@@ -31,9 +31,6 @@ dependencies {
     testImplementation("com.amazonaws:aws-java-sdk-core")
     testImplementation("org.mockito:mockito-core")
     testImplementation("org.testcontainers:junit-jupiter")
-    testImplementation("org.testcontainers:localstack")
-    testImplementation("org.testcontainers:mariadb")
-    testImplementation("org.testcontainers:testcontainers")
     compileOnly("org.graalvm.nativeimage:svm")
 
     implementation("io.micronaut:micronaut-validation")
@@ -57,10 +54,4 @@ micronaut {
         incremental(true)
         annotations("krystian.kryszczak.*")
     }
-    testResources {
-        additionalModules.add("jdbc-mariadb")
-    }
 }
-
-
-
