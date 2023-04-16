@@ -1,4 +1,4 @@
-package krystian.kryszczak.configuration.messenger;
+package krystian.kryszczak.configuration.meta.messenger;
 
 import io.micronaut.context.annotation.ConfigurationProperties;
 import lombok.Data;

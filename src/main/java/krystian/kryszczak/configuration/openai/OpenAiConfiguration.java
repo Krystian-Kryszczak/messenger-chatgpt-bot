@@ -7,4 +7,5 @@ import lombok.Data;
 @ConfigurationProperties("open-ai")
 public class OpenAiConfiguration {
     private String token;
+    private String chatGptModel;
 }

@@ -33,6 +33,7 @@ netty:
     allocator:
       max-order: 3
 open-ai:
-  token: $OPENAI_TOKEN
+  token: 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
+  chat-gpt: gpt3.5
 messenger:
   token: test
