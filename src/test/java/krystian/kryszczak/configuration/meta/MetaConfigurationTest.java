@@ -1,4 +1,4 @@
-package krystian.kryszczak.configuration.meta.messenger;
+package krystian.kryszczak.configuration.meta;
 
 import io.micronaut.context.ApplicationContext;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @MicronautTest
-public class MessengerConfigurationTest {
+public class MetaConfigurationTest {
 
     @Test
     public void tokenTest() {
@@ -19,9 +19,9 @@ public class MessengerConfigurationTest {
         items.put("messenger.token", "M826g0IqKeZ8WK6srpEIROJXgjTpM=Q5pUmHf3WBiDQrpFSEnavx");
 
         ApplicationContext ctx = ApplicationContext.run(items);
-        MessengerConfiguration messengerConfiguration = ctx.getBean(MessengerConfiguration.class);
+        MetaConfiguration metaConfiguration = ctx.getBean(MetaConfiguration.class);
 
-        String token = messengerConfiguration.getToken();
+        String token = metaConfiguration.getToken();
 
         assertNotNull(token);
         assertTrue(token.length() > 50);

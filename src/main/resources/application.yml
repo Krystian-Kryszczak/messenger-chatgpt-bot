@@ -35,5 +35,5 @@ netty:
 open-ai:
   token: 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
   chat-gpt: gpt3.5
-messenger:
+meta:
   token: test
