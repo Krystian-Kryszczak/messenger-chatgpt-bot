@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @MicronautTest
 public class MetaConfigurationTest {
@@ -24,12 +24,8 @@ public class MetaConfigurationTest {
         String appId = metaConfiguration.getAppId();
         String token = metaConfiguration.getToken();
 
-        assertNotNull(appId);
-        assertFalse(appId.isBlank());
-
-        assertNotNull(token);
-        assertTrue(token.length() > 50);
-        assertTrue(token.length() < 55);
+        assertEquals("1111", appId);
+        assertEquals("M826g0IqKeZ8WK6srpEIROJXgjTpM=Q5pUmHf3WBiDQrpFSEnavx", token);
 
         ctx.close();
     }
