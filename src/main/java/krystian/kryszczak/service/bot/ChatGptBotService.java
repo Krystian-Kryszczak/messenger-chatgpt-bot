@@ -21,7 +21,7 @@ public final class ChatGptBotService implements BotService {
     public Maybe<String> sendMessage(@NotNull String message) {
         final var request = ChatCompletionRequest.builder()
             .messages(List.of(new ChatMessage("user", message)))
-            .model("gpt-3.5-turbo")
+            .model("")
             .build();
 
         return Maybe.fromCallable(

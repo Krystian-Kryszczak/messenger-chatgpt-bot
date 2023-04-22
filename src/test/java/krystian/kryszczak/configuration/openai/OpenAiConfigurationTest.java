@@ -7,8 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @MicronautTest
 public final class OpenAiConfigurationTest {
@@ -17,16 +16,16 @@ public final class OpenAiConfigurationTest {
     public void tokenTest() {
         Map<String, Object> items = new HashMap<>();
         items.put("open-ai.token", "sk-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9SflKxwRJSMeKK");
+        items.put("open-ai.gpt-model", "gpt-3.5-turbo");
 
         ApplicationContext ctx = ApplicationContext.run(items);
         OpenAiConfiguration openAiConfiguration = ctx.getBean(OpenAiConfiguration.class);
 
         String token = openAiConfiguration.getToken();
+        String gptModel = openAiConfiguration.getGptModel();
 
-        assertNotNull(token);
-        assertTrue(token.startsWith("sk-"));
-        assertTrue(token.length() > 50);
-        assertTrue(token.length() < 55);
+        assertEquals("sk-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9SflKxwRJSMeKK", token);
+        assertEquals("gpt-3.5-turbo", gptModel);
 
         ctx.close();
     }
