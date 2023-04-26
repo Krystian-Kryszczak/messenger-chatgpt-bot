@@ -3,7 +3,7 @@ plugins {
     id("io.micronaut.application") version "3.7.8"
 }
 
-version = "0.1"
+version = "0.4-beta"
 group = "krystian.kryszczak"
 
 repositories {
@@ -17,12 +17,10 @@ dependencies {
     annotationProcessor("io.micronaut.security:micronaut-security-annotations")
     implementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut:micronaut-jackson-databind")
-    implementation("io.micronaut.graphql:micronaut-graphql")
     implementation("io.micronaut.rxjava3:micronaut-rxjava3")
     implementation("io.micronaut.rxjava3:micronaut-rxjava3-http-client")
     implementation("io.micronaut.security:micronaut-security")
     implementation("io.micronaut.security:micronaut-security-jwt")
-    implementation("io.micronaut.sql:micronaut-jdbc-hikari")
     implementation("io.swagger.core.v3:swagger-annotations")
     implementation("jakarta.annotation:jakarta.annotation-api")
     compileOnly("org.projectlombok:lombok")
